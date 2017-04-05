@@ -58,8 +58,10 @@ for (var guesses = 3; guesses > 0; guesses--) {
     alert('Age guessed correctly');
     console.log('Age guessed correctly');
     count++;
+  } else if (parseInt(userAgeGuess) > myAge) {
+    alert('I said how old am I, not how ELDERLY! Guess again.')
   } else {
-    alert('Incorrect.')
+    alert('I know I have a baby face, but for serious. Guess again.')
   }
 }
 
@@ -68,7 +70,7 @@ for (var guesses = 6; guesses > 0 && heroGuess === false; guesses--) {
     for (var i = 0; i < superheroArray.length; i++) {
       if (superheroArray[i] === userHeroGuess.toLowerCase().trim()) {
         heroGuess = true;
-        alert('True. You guessed one of the following correct answers: ' + superheroArray[i] + " ");
+        alert('True. You guessed one of the following correct answers: ' + superheroArray);
         count++;
        }
     }
