@@ -5,7 +5,7 @@ var colorArray = ['red', 'blue', 'black', 'green', 'pink'];
 var foodArray = ['sushi', 'soup', 'italian', 'chicken', 'fruit' ];
 var languageArray = ['english', 'spanish', 'italian', 'chinese', 'german'];
 var homeArray = ['west seattle', 'queen anne', 'redmond', 'northgate', 'burien'];
-var count = 0;  
+var count = 0;
 
 function randomNumber() {
    return Math.floor(Math.random() * 4);
@@ -19,13 +19,15 @@ var homeAnswer = homeArray[randomNumber()];
 
 alert('Welcome to the Guessing Game, try not to lose :-)');
 var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
+console.log('Computer: Is my name ' + nameAnswer + '?');
+console.log('User answer: ' + nameQuestion);
+
 var colorQuestion = prompt('Is my favorite color ' + colorAnswer + '?');
 var foodQuestion = prompt('Is my favorite food ' + foodAnswer + '?');
 var languageQuestion = prompt('Do I speak ' + languageAnswer + '?');
 var homeQuestion = prompt('Do I live in ' + homeAnswer + '?');
 
-console.log('Computer: Is my name ' + nameAnswer + '?');
-console.log('User answer: ' + nameQuestion);
+
   if ( (nameAnswer == 'dustin') && (nameQuestion.toLowerCase().trim() == 'yes') )  {
       console.log('Correct');
       count ++;
