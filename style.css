@@ -1,11 +1,11 @@
 * {
-  font-family:cursive;
+  font-family:cursive, verdana, sans-serif;
   text-align: center;
 
 }
 
 body {
-  background-color: yellow;
+  background-color: blue;
 }
 
 h1 {

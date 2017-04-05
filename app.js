@@ -19,9 +19,6 @@ var homeAnswer = homeArray[randomNumber()];
 
 alert('Welcome to the Guessing Game, try not to lose :-)');
 var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
-console.log('Computer: Is my name ' + nameAnswer + '?');
-console.log('User answer: ' + nameQuestion);
-
 var colorQuestion = prompt('Is my favorite color ' + colorAnswer + '?');
 var foodQuestion = prompt('Is my favorite food ' + foodAnswer + '?');
 var languageQuestion = prompt('Do I speak ' + languageAnswer + '?');
