@@ -1,13 +1,30 @@
 * {
-  font-family:cursive, verdana, sans-serif;
+  font-family: cursive, verdana, sans-serif;
   text-align: center;
-
+  background-color: Yellow;
 }
 
-body {
-  background-color: blue;
+title {
+  float: none;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
 }
 
-h1 {
+ul {
+}
 
+p {
+  display: inline-block;
+  background-color: yellow;
+}
+
+#likes {
+}
+
+div {
+border: 1px dotted red;
+padding: 10px;
+margin: 20px;
 }

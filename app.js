@@ -1,29 +1,76 @@
 'use strict';
 
+//TODO: I wasnt to prompt the user to guess the number 12
+// and get 4 chances
+
+// Var correctNumber = 12;
+// var notDone = true;
+//
+// var guess;
+// for (var guesses = 3; guesses > 0 && notDone; guesses--) {
+//   guess = prompt('whats my fav num');//  guess = parseInt(guess);
+//   if (guess === correctNumber) {
+//     alert('you got the right number');
+//     notDone = false;
+//   }
+
 var nameArray = ['dustin', 'phil', 'kevin', 'paul', 'adam'];
 var colorArray = ['red', 'blue', 'black', 'green', 'pink'];
 var foodArray = ['sushi', 'soup', 'italian', 'chicken', 'fruit' ];
 var languageArray = ['english', 'spanish', 'italian', 'chinese', 'german'];
 var homeArray = ['west seattle', 'queen anne', 'redmond', 'northgate', 'burien'];
+var superheroArray = ['gambit', 'the hulk', 'wolverine', 'deadpool'];
+var heroGuess = false;
+var myAge = 32;
 var count = 0;
 
-function randomNumber() {
-   return Math.floor(Math.random() * 4);
+var nameAnswer = nameArray[Math.floor(Math.random() * 4)];
+var colorAnswer = colorArray[Math.floor(Math.random() * 4)];
+var foodAnswer = foodArray[Math.floor(Math.random() * 4)];
+var languageAnswer = languageArray[Math.floor(Math.random() * 4)];
+var homeAnswer = homeArray[Math.floor(Math.random() * 4)];
+
+var userName = prompt('Welcome to the Guessing Game, try not to lose!\n\nWhat is your name?');
+var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
+console.log('Is my name ' + nameAnswer + '?');
+console.log('User answer: ' + nameQuestion);
+var colorQuestion = prompt('Is my favorite color ' + colorAnswer + '?');
+console.log('Is my favorite color ' + colorAnswer + '?');
+console.log('User answer: ' + colorQuestion);
+var foodQuestion = prompt('Is my favorite food ' + foodAnswer + '?');
+console.log('Is my favorite food ' + foodAnswer + '?');
+console.log('User answer: ' + foodQuestion);
+var languageQuestion = prompt('Do I speak ' + languageAnswer + '?');
+console.log('Do I speak ' + languageAnswer + '?');
+console.log('User answer: ' + languageQuestion);
+var homeQuestion = prompt('Do I live in ' + homeAnswer + '?');
+console.log('Do I live in ' + homeAnswer + '?');
+console.log('User answer: ' + homeQuestion);
+
+for (var guesses = 3; guesses > 0; guesses--) {
+  var userAgeGuess = prompt('How old am I? You have ' + guesses + ' guesses left.');
+  if (parseInt(userAgeGuess) === myAge) {
+    guesses = 0;
+    alert('Age guessed correctly');
+    console.log('Age guessed correctly');
+    count++;
+  } else if (parseInt(userAgeGuess) > myAge) {
+    alert('I said how old am I, not how ELDERLY! Guess again.')
+  } else {
+    alert('I know I have a baby face, but for serious. Guess again.')
+  }
 }
 
-var nameAnswer = nameArray[randomNumber()];
-var colorAnswer = colorArray[randomNumber()];
-var foodAnswer = foodArray[randomNumber()];
-var languageAnswer = languageArray[randomNumber()];
-var homeAnswer = homeArray[randomNumber()];
-
-alert('Welcome to the Guessing Game, try not to lose :-)');
-var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
-var colorQuestion = prompt('Is my favorite color ' + colorAnswer + '?');
-var foodQuestion = prompt('Is my favorite food ' + foodAnswer + '?');
-var languageQuestion = prompt('Do I speak ' + languageAnswer + '?');
-var homeQuestion = prompt('Do I live in ' + homeAnswer + '?');
-
+for (var guesses = 6; guesses > 0 && heroGuess === false; guesses--) {
+  var userHeroGuess = prompt('What is a superhero that I like?\nYou have ' + guesses + ' guesses left');
+    for (var i = 0; i < superheroArray.length; i++) {
+      if (superheroArray[i] === userHeroGuess.toLowerCase().trim()) {
+        heroGuess = true;
+        alert('True. You guessed one of the following correct answers: ' + superheroArray);
+        count++;
+       }
+    }
+}
 
   if ( (nameAnswer == 'dustin') && (nameQuestion.toLowerCase().trim() == 'yes') )  {
       console.log('Correct');
@@ -41,8 +88,6 @@ var homeQuestion = prompt('Do I live in ' + homeAnswer + '?');
       console.log('Nope');
     }
 
-console.log('Is my favorite color ' + colorAnswer + '?');
-console.log('User answer: ' + colorQuestion);
     if ( (colorAnswer == 'red') && (colorQuestion.toLowerCase().trim() == 'yes') )  {
         console.log('Correct');
         count ++;
@@ -58,10 +103,6 @@ console.log('User answer: ' + colorQuestion);
       } else {
         console.log('Nope');
       }
-
-console.log('Is my favorite food ' + foodAnswer + '?');
-console.log('User answer: ' + foodQuestion);
-
 
       if ( (foodAnswer == 'sushi') && (foodQuestion.toLowerCase().trim() == 'yes') )  {
           console.log('Correct');
@@ -79,9 +120,6 @@ console.log('User answer: ' + foodQuestion);
           console.log('Nope');
         }
 
-  console.log('Do I speak ' + languageAnswer + '?');
-  console.log('User answer: ' + languageQuestion);
-
         if ( (languageAnswer == 'english') && (languageQuestion.toLowerCase().trim() == 'yes') )  {
             console.log('Correct');
             count ++;
@@ -97,9 +135,6 @@ console.log('User answer: ' + foodQuestion);
           } else {
             console.log('Nope');
           }
-
-    console.log('Do I live in ' + homeAnswer + '?');
-      console.log('User answer: ' + homeQuestion);
 
           if ( (homeAnswer == 'west seattle') && (homeQuestion.toLowerCase().trim() == 'yes') )  {
               console.log('Correct');
@@ -117,15 +152,57 @@ console.log('User answer: ' + foodQuestion);
               console.log('Nope');
             }
 
-            switch (count) {
-              case 0:
-              case 1:
-              case 2:
-                alert('Not very good, try again SUCKA!')
-                break;
-              case 5:
-                alert('Wow you got them all! Stalk much?')
-                break;
-              default:
-                alert('Pretty good...But not perfect.');
+            if (count < 4) {
+                alert(count + ' out of 7.\nNot very good, try again SUCKA! (' + userName + ')');
+              } else if (count < 7) {
+                alert(count + ' out of 7.\nWow you got them all! Stalk much there, ' + userName + '?');
+              } else if (count == 7) {
+                alert(count + ' out of 7.\nPretty good...But not perfect...' + userName.toUpperCase() );
             }
+
+
+
+// Class three code demo
+
+
+// DATA TYPES is JS
+
+// Object
+// Function
+// Array
+
+//primitives
+// String
+// Boolean
+// Number
+// null
+// undefined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
