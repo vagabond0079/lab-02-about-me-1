@@ -62,25 +62,23 @@ function homeQ() {
   console.log('User answer: ' + homeQuestion);
 }
 
-nameQ();
-colorQ();
-foodQ();
-langQ();
-homeQ();
-
-for (var guesses = 3; guesses > 0; guesses--) {
-  var userAgeGuess = prompt('How old am I? You have ' + guesses + ' guesses left.');
-  if (parseInt(userAgeGuess) === myAge) {
-    guesses = 0;
-    alert('Age guessed correctly');
-    console.log('Age guessed correctly');
-    count++;
-  } else if (parseInt(userAgeGuess) > myAge) {
-    alert('I said how old am I, not how ELDERLY! Guess again.')
-  } else {
-    alert('I know I have a baby face, but for serious. Guess again.')
+function guessHowOld() {
+  for (var guesses = 3; guesses > 0; guesses--) {
+    var userAgeGuess = prompt('How old am I? You have ' + guesses + ' guesses left.');
+    if (parseInt(userAgeGuess) === myAge) {
+      guesses = 0;
+      alert('Age guessed correctly');
+      console.log('Age guessed correctly');
+      count++;
+    } else if (parseInt(userAgeGuess) > myAge) {
+      alert('I said how old am I, not how ELDERLY! Guess again.')
+    } else {
+      alert('I know I have a baby face, but for serious. Guess again.')
+    }
   }
 }
+
+
 
 for (var guesses = 6; guesses > 0 && heroGuess === false; guesses--) {
   var userHeroGuess = prompt('What is a superhero that I like?\nYou have ' + guesses + ' guesses left');
@@ -179,9 +177,15 @@ for (var guesses = 6; guesses > 0 && heroGuess === false; guesses--) {
                 alert(count + ' out of 7.\nWow you got them all! Stalk much there, ' + userName + '?');
               } else if (count == 7) {
                 alert(count + ' out of 7.\nPretty good...But not perfect...' + userName.toUpperCase() );
-            }
+//             }
 
+nameQ();
+colorQ();
+foodQ();
+langQ();
+homeQ();
 
+guessHowOld();
 
 // Class three code demo
 
