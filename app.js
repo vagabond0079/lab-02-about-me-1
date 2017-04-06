@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 //TODO: I wasnt to prompt the user to guess the number 12
 // and get 4 chances
 
@@ -36,30 +38,95 @@ function nameQ() {
   var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
   console.log('Is my name ' + nameAnswer + '?');
   console.log('User answer: ' + nameQuestion);
+
+  if ( (nameAnswer == 'dustin') && (nameQuestion.toLowerCase().trim() == 'yes') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (nameAnswer == 'dustin') && (nameQuestion.toLowerCase().trim() == 'y') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (nameAnswer != 'dustin') && (nameQuestion.toLowerCase().trim() == 'no') ) {
+      console.log('Correct');
+      count ++;
+    } else if ( (nameAnswer != 'dustin') && (nameQuestion.toLowerCase().trim() == 'n') ) {
+      console.log('Correct');
+      count ++;
+    } else {
+      console.log('Nope');
+    }
 }
 
 function colorQ() {
   var colorQuestion = prompt('Is my favorite color ' + colorAnswer + '?');
   console.log('Is my favorite color ' + colorAnswer + '?');
   console.log('User answer: ' + colorQuestion);
+
+  if ( (colorAnswer == 'red') && (colorQuestion.toLowerCase().trim() == 'yes') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (colorAnswer == 'red') && (colorQuestion.toLowerCase().trim() == 'y') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (colorAnswer != 'red') && (colorQuestion.toLowerCase().trim() == 'no') ) {
+      console.log('Correct');
+      count ++;
+    } else if ( (colorAnswer != 'red') && (colorQuestion.toLowerCase().trim() == 'n') ) {
+      console.log('Correct');
+      count ++;
+    } else {
+      console.log('Nope');
+    }
 }
 
 function foodQ() {
   var foodQuestion = prompt('Is my favorite food ' + foodAnswer + '?');
   console.log('Is my favorite food ' + foodAnswer + '?');
   console.log('User answer: ' + foodQuestion);
+
+  if ( (foodAnswer == 'sushi') && (foodQuestion.toLowerCase().trim() == 'yes') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (foodAnswer == 'sushi') && (foodQuestion.toLowerCase().trim() == 'y') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (foodAnswer != 'sushi') && (foodQuestion.toLowerCase().trim() == 'no') ) {
+      console.log('Correct');
+      count ++;
+    } else if ( (foodAnswer != 'sushi') && (foodQuestion.toLowerCase().trim() == 'n') ) {
+      console.log('Correct');
+      count ++;
+    } else {
+      console.log('Nope');
+    }
 }
 
 function langQ() {
   var languageQuestion = prompt('Do I speak ' + languageAnswer + '?');
   console.log('Do I speak ' + languageAnswer + '?');
   console.log('User answer: ' + languageQuestion);
+
+  if ( (languageAnswer == 'english') && (languageQuestion.toLowerCase().trim() == 'yes') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (languageAnswer == 'english') && (languageQuestion.toLowerCase().trim() == 'y') )  {
+      console.log('Correct');
+      count ++;
+    } else if ( (languageAnswer != 'english') && (languageQuestion.toLowerCase().trim() == 'no') ) {
+      console.log('Correct');
+      count ++;
+    } else if ( (languageAnswer != 'english') && (languageQuestion.toLowerCase().trim() == 'n') ) {
+      console.log('Correct');
+      count ++;
+    } else {
+      console.log('Nope');
+    }
 }
 
 function homeQ() {
   var homeQuestion = prompt('Do I live in ' + homeAnswer + '?');
   console.log('Do I live in ' + homeAnswer + '?');
   console.log('User answer: ' + homeQuestion);
+
 }
 
 function guessHowOld() {
@@ -78,106 +145,18 @@ function guessHowOld() {
   }
 }
 
-
-
-for (var guesses = 6; guesses > 0 && heroGuess === false; guesses--) {
-  var userHeroGuess = prompt('What is a superhero that I like?\nYou have ' + guesses + ' guesses left');
-    for (var i = 0; i < superheroArray.length; i++) {
-      if (superheroArray[i] === userHeroGuess.toLowerCase().trim()) {
-        heroGuess = true;
-        alert('True. You guessed one of the following correct answers: ' + superheroArray);
-        count++;
-       }
-    }
-}
-
-  if ( (nameAnswer == 'dustin') && (nameQuestion.toLowerCase().trim() == 'yes') )  {
-      console.log('Correct');
-      count ++;
-    } else if ( (nameAnswer == 'dustin') && (nameQuestion.toLowerCase().trim() == 'y') )  {
-      console.log('Correct');
-      count ++;
-    } else if ( (nameAnswer != 'dustin') && (nameQuestion.toLowerCase().trim() == 'no') ) {
-      console.log('Correct');
-      count ++;
-    } else if ( (nameAnswer != 'dustin') && (nameQuestion.toLowerCase().trim() == 'n') ) {
-      console.log('Correct');
-      count ++;
-    } else {
-      console.log('Nope');
-    }
-
-    if ( (colorAnswer == 'red') && (colorQuestion.toLowerCase().trim() == 'yes') )  {
-        console.log('Correct');
-        count ++;
-      } else if ( (colorAnswer == 'red') && (colorQuestion.toLowerCase().trim() == 'y') )  {
-        console.log('Correct');
-        count ++;
-      } else if ( (colorAnswer != 'red') && (colorQuestion.toLowerCase().trim() == 'no') ) {
-        console.log('Correct');
-        count ++;
-      } else if ( (colorAnswer != 'red') && (colorQuestion.toLowerCase().trim() == 'n') ) {
-        console.log('Correct');
-        count ++;
-      } else {
-        console.log('Nope');
+function guessHero() {
+  for (var guesses = 6; guesses > 0 && heroGuess === false; guesses--) {
+    var userHeroGuess = prompt('What is a superhero that I like?\nYou have ' + guesses + ' guesses left');
+      for (var i = 0; i < superheroArray.length; i++) {
+        if (superheroArray[i] === userHeroGuess.toLowerCase().trim()) {
+          heroGuess = true;
+          alert('True. You guessed one of the following correct answers: ' + superheroArray);
+          count++;
+         }
       }
-
-      if ( (foodAnswer == 'sushi') && (foodQuestion.toLowerCase().trim() == 'yes') )  {
-          console.log('Correct');
-          count ++;
-        } else if ( (foodAnswer == 'sushi') && (foodQuestion.toLowerCase().trim() == 'y') )  {
-          console.log('Correct');
-          count ++;
-        } else if ( (foodAnswer != 'sushi') && (foodQuestion.toLowerCase().trim() == 'no') ) {
-          console.log('Correct');
-          count ++;
-        } else if ( (foodAnswer != 'sushi') && (foodQuestion.toLowerCase().trim() == 'n') ) {
-          console.log('Correct');
-          count ++;
-        } else {
-          console.log('Nope');
-        }
-
-        if ( (languageAnswer == 'english') && (languageQuestion.toLowerCase().trim() == 'yes') )  {
-            console.log('Correct');
-            count ++;
-          } else if ( (languageAnswer == 'english') && (languageQuestion.toLowerCase().trim() == 'y') )  {
-            console.log('Correct');
-            count ++;
-          } else if ( (languageAnswer != 'english') && (languageQuestion.toLowerCase().trim() == 'no') ) {
-            console.log('Correct');
-            count ++;
-          } else if ( (languageAnswer != 'english') && (languageQuestion.toLowerCase().trim() == 'n') ) {
-            console.log('Correct');
-            count ++;
-          } else {
-            console.log('Nope');
-          }
-
-          if ( (homeAnswer == 'west seattle') && (homeQuestion.toLowerCase().trim() == 'yes') )  {
-              console.log('Correct');
-              count ++;
-            } else if ( (homeAnswer == 'west seattle') && (homeQuestion.toLowerCase().trim() == 'y') )  {
-              console.log('Correct');
-              count ++;
-            } else if ( (homeAnswer != 'west seattle') && (homeQuestion.toLowerCase().trim() == 'no') ) {
-              console.log('Correct');
-              count ++;
-            } else if ( (homeAnswer != 'west seattle') && (homeQuestion.toLowerCase().trim() == 'n') ) {
-              console.log('Correct');
-              count ++;
-            } else {
-              console.log('Nope');
-            }
-
-            if (count < 4) {
-                alert(count + ' out of 7.\nNot very good, try again SUCKA! (' + userName + ')');
-              } else if (count < 7) {
-                alert(count + ' out of 7.\nWow you got them all! Stalk much there, ' + userName + '?');
-              } else if (count == 7) {
-                alert(count + ' out of 7.\nPretty good...But not perfect...' + userName.toUpperCase() );
-//             }
+  }
+}
 
 nameQ();
 colorQ();
@@ -187,6 +166,20 @@ homeQ();
 
 guessHowOld();
 
+guessHero();
+
+
+if (count < 4) {
+    alert(count + ' out of 7.\nNot very good, try again SUCKA! (' + userName + ')');
+  } else if (count < 7) {
+    alert(count + ' out of 7.\nWow you got them all! Stalk much there, ' + userName + '?');
+  } else if (count == 7) {
+    alert(count + ' out of 7.\nPretty good...But not perfect...' + userName.toUpperCase() );
+//             }
+
+
+
+}
 // Class three code demo
 
 
