@@ -31,21 +31,42 @@ var languageAnswer = languageArray[Math.floor(Math.random() * 4)];
 var homeAnswer = homeArray[Math.floor(Math.random() * 4)];
 
 var userName = prompt('Welcome to the Guessing Game, try not to lose!\n\nWhat is your name?');
-var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
-console.log('Is my name ' + nameAnswer + '?');
-console.log('User answer: ' + nameQuestion);
-var colorQuestion = prompt('Is my favorite color ' + colorAnswer + '?');
-console.log('Is my favorite color ' + colorAnswer + '?');
-console.log('User answer: ' + colorQuestion);
-var foodQuestion = prompt('Is my favorite food ' + foodAnswer + '?');
-console.log('Is my favorite food ' + foodAnswer + '?');
-console.log('User answer: ' + foodQuestion);
-var languageQuestion = prompt('Do I speak ' + languageAnswer + '?');
-console.log('Do I speak ' + languageAnswer + '?');
-console.log('User answer: ' + languageQuestion);
-var homeQuestion = prompt('Do I live in ' + homeAnswer + '?');
-console.log('Do I live in ' + homeAnswer + '?');
-console.log('User answer: ' + homeQuestion);
+
+function nameQ() {
+  var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
+  console.log('Is my name ' + nameAnswer + '?');
+  console.log('User answer: ' + nameQuestion);
+}
+
+function colorQ() {
+  var colorQuestion = prompt('Is my favorite color ' + colorAnswer + '?');
+  console.log('Is my favorite color ' + colorAnswer + '?');
+  console.log('User answer: ' + colorQuestion);
+}
+
+function foodQ() {
+  var foodQuestion = prompt('Is my favorite food ' + foodAnswer + '?');
+  console.log('Is my favorite food ' + foodAnswer + '?');
+  console.log('User answer: ' + foodQuestion);
+}
+
+function langQ() {
+  var languageQuestion = prompt('Do I speak ' + languageAnswer + '?');
+  console.log('Do I speak ' + languageAnswer + '?');
+  console.log('User answer: ' + languageQuestion);
+}
+
+function homeQ() {
+  var homeQuestion = prompt('Do I live in ' + homeAnswer + '?');
+  console.log('Do I live in ' + homeAnswer + '?');
+  console.log('User answer: ' + homeQuestion);
+}
+
+nameQ();
+colorQ();
+foodQ();
+langQ();
+homeQ();
 
 for (var guesses = 3; guesses > 0; guesses--) {
   var userAgeGuess = prompt('How old am I? You have ' + guesses + ' guesses left.');
