@@ -24,15 +24,11 @@ var heroGuess = false;
 var myAge = 32;
 var count = 0;
 
-function randomNumber() {
-   return Math.floor(Math.random() * 4);
-}
-
-var nameAnswer = nameArray[randomNumber()];
-var colorAnswer = colorArray[randomNumber()];
-var foodAnswer = foodArray[randomNumber()];
-var languageAnswer = languageArray[randomNumber()];
-var homeAnswer = homeArray[randomNumber()];
+var nameAnswer = nameArray[Math.floor(Math.random() * 4)];
+var colorAnswer = colorArray[Math.floor(Math.random() * 4)];
+var foodAnswer = foodArray[Math.floor(Math.random() * 4)];
+var languageAnswer = languageArray[Math.floor(Math.random() * 4)];
+var homeAnswer = homeArray[Math.floor(Math.random() * 4)];
 
 var userName = prompt('Welcome to the Guessing Game, try not to lose!\n\nWhat is your name?');
 var nameQuestion = prompt('Is my name ' + nameAnswer + '?');
@@ -156,19 +152,15 @@ for (var guesses = 6; guesses > 0 && heroGuess === false; guesses--) {
               console.log('Nope');
             }
 
-            switch (count) {
-              case 0:
-              case 1:
-              case 2:
-              case 3:
+            if (count < 4) {
                 alert(count + ' out of 7.\nNot very good, try again SUCKA! (' + userName + ')');
-                break;
-              case 7:
+              } else if (count < 7) {
                 alert(count + ' out of 7.\nWow you got them all! Stalk much there, ' + userName + '?');
-                break;
-              default:
+              } else if (count == 7) {
                 alert(count + ' out of 7.\nPretty good...But not perfect...' + userName.toUpperCase() );
             }
+
+
 
 // Class three code demo
 
